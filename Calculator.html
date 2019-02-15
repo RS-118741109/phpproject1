@@ -27,6 +27,22 @@ and open the template in the editor.
      }
      
     }
+    
+    function calcDisc(){
+        var subTot = document.calculator.total.value;
+        var discTotal = ((subTot/ 100) *10);
+        document.calculator.discount.value=discTotal;
+    
+    }
+    function calcTotal(){
+        var subTott= document.calculator.total.value;
+        
+        var discTotal = document.calculator.discount.value;
+        
+        var wholeTotal = (subTott - discTotal);
+        
+        document.calculator.wholeTotal.value = wholeTotal;
+    }
     </script>
     </head>
     <body>
@@ -40,10 +56,22 @@ and open the template in the editor.
        
        <!----Here result will be displayed. --->
        <br />
-       your Total price is: <input type="text" name="total">
+       subtotal: <input type="text" name="total">
+                        
+                        <br>
+       <input type="button" value="Subtotal" onclick="javascript:packageTotal();">
+       <br/>
        
-       <input type="button" value="Submit" onclick="javascript:packageTotal();">
+       Discount: <input type="text" name="discount">
+       <br/>
+       <input type="button" value="Discount" onclick="javascript:calcDisc();">
+       <br/>
+       Total: <input type="text" name="wholeTotal">
+       <br>
+       <input type="button" value="Total" onclick="javascript:calcTotal();">
        
-       </from>
+     
+       
+       </form>
     </body>
 </html>
